@@ -56,28 +56,6 @@ A hybrid **AI + Blockchain** framework designed for freelancer platforms that:
 
 ---
 
-## 💼 Use Cases
-
-| Industry         | Application                        |
-|------------------|-------------------------------------|
-| Freelance Work    | Quality-based task approvals        |
-| NFT Marketplaces  | Royalty and ownership disputes      |
-| DAOs              | Proposal and vote conflict checks   |
-| DeFi Insurance    | Claim validation                   |
-
----
-
-## 📈 Why Web3SSH Matters
-
-| Before Web3SSH         | With Web3SSH                 |
-|------------------------|------------------------------|
-| Manual, slow reviews   | AI-powered instant decisions |
-| Centralized arbitrators| Decentralized validators     |
-| Binary dispute results | Partial/graded settlements   |
-| Subjective arguments   | Data-driven scoring          |
-
----
-
 ## 🛠️ Technical Architecture
 
 ### 🔧 Core Tech Stack
