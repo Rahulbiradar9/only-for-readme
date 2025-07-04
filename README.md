@@ -116,31 +116,4 @@ A hybrid **AI + Blockchain** framework that:
 
 ---
 
-## 🚧 Roadmap
-
-| Milestone   | Target Date |
-|-------------|-------------|
-| Testnet Launch | Q4 2024     |
-| Mainnet Launch | Q1 2025     |
-
----
-
-## 🤝 Contributing
-
-We're actively looking for:
-- Web3 Developers
-- AI/ML Engineers
-- Technical Writers & QA
-- Early testers and project collaborators
-
-Check out the [GitHub Issues](#) to get started or [contact us](#) to join our community.
-
----
-
-## 📄 License
-
-This project is licensed under [MIT License](LICENSE).
-
----
-
 > **Web3SSH-Ascendant** brings trust, speed, and intelligence to Web3 disputes—bridging the gap between smart contracts and real-world judgment.
