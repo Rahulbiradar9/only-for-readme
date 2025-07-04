@@ -29,7 +29,7 @@ A hybrid **AI + Blockchain** framework designed for freelancer platforms that:
   Smart contracts handle fund distribution based on the resolved outcome — fast, secure, and transparent.
 
 ---
-##🔧 FLOW
+## 🔧 FLOW
 ```text
 ┌──────────────────────┐    ┌──────────────────────┐    ┌───────────────────────┐
 │                      │    │                      │    │                       │
