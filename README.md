@@ -29,6 +29,22 @@ A hybrid **AI + Blockchain** framework designed for freelancer platforms that:
   Smart contracts handle fund distribution based on the resolved outcome — fast, secure, and transparent.
 
 ---
+##🔧 FLOW
+```text
+┌──────────────────────┐    ┌──────────────────────┐    ┌───────────────────────┐
+│                      │    │                      │    │                       │
+│   Client Smart       │    │  Chainlink Oracle    │    │   Vertex AI           │
+│   Contract           │    │  Network             │    │   Processing          │
+│                      │    │                      │    │                       │
+│  - Escrow logic      │◄──►│  - Request           │◄──►│  - Evidence analysis  │
+│  - Fund locking      │    │    dispatching       │    │  - Contextual         │
+│  - Ruling            │    │  - Response          │    │    understanding      │
+│    enforcement       │    │    aggregation       │    │  - Decision scoring   │
+│                      │    │  - Proof delivery    │    │                       │
+└──────────────────────┘    └──────────────────────┘    └───────────────────────┘
+```
+
+---
 
 ## ⚙️ How It Works
 
