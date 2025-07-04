@@ -1,77 +1,143 @@
 # Web3SSH-Ascendant: AI-Powered Dispute Resolution for Web3
 
-## 🚀 Overview
+# 🤖 AI-Assisted Freelance Escrow dApp
 
-Traditional smart contracts struggle with tasks requiring human judgment - like evaluating freelance work quality or resolving subjective disputes. Web3SSH-Ascendant solves this by combining AI with blockchain to deliver fair, automated decisions.
+This is a decentralized freelance escrow platform that combines **blockchain smart contracts** with **AI/ML-powered validation** to ensure fair and intelligent handling of freelance payments—especially for software and media-related projects.
 
-## 🔍 The Problem
+---
 
-Current solutions are either:
-- Too centralized (using single arbitrators)
-- Too slow/costly (DAO voting)
-- Too simplistic (binary outcomes)
+## 💡 Problem
 
-## 💡 Our Solution
+Traditional smart contracts lack the ability to handle **subjective evaluations**, such as:
 
-A hybrid AI-blockchain system that:
-1. **Analyzes** dispute evidence using advanced AI
-2. **Decides** fair outcomes via decentralized oracles
-3. **Automatically executes** rulings through smart contracts
+- Determining code quality
+- Checking if project deliverables are complete
+- Evaluating media (designs, videos, audio) for requirement fulfillment
 
-## ⚙️ How It Works
+---
 
-1. **Dispute Starts**  
-   - Parties submit evidence to the system
-   - Funds are locked in escrow
+## 🛠️ Solution
 
-2. **AI Analysis**  
-   - Our AI evaluates all evidence (text, images, code, etc.)
-   - Considers context and requirements
-   - Scores quality/completion objectively
+This platform uses a hybrid approach:
 
-3. **Blockchain Execution**  
-   - Multiple validators verify the AI's decision
-   - Smart contract automatically distributes funds
-   - All steps are transparent and tamper-proof
+- **Smart Contracts (Solidity + MetaMask)** for fund escrow, milestones, and automated payments
+- **Vertex AI (GCP)** for evaluating **GitHub repos** (for software projects)
+- **Custom ML Models** for evaluating **media assets** (images, video, audio)
+- **AI/ML-generated completion percentage** used to decide payout conditions
 
-## 🌟 Key Features
+---
 
-✅ **Fair Decisions** - AI trained on thousands of real disputes  
-✅ **Fast Resolution** - Minutes instead of days/weeks  
-✅ **Cost Effective** - Fraction of human arbitration costs  
-✅ **Transparent** - Every step recorded on-chain  
-✅ **Flexible** - Works for freelancing, NFTs, DAOs, and more  
+## ⚙️ Architecture
 
-## 🛠️ Technical Components
+### Frontend
+- Built with React/Next.js
+- Integrates with MetaMask
+- Displays:
+  - Contract status
+  - Progress
+  - Balances
+  - Evaluation results
 
-| Component | Purpose |
-|-----------|---------|
-| **Vertex AI** | Analyzes evidence with human-like understanding |
-| **Chainlink** | Securely connects AI to blockchain |
-| **Smart Contracts** | Automatically enforce fair decisions |
+### Smart Contract (Hardhat / Solidity)
+- Holds escrow funds
+- Encodes rules:
+  - Auto-payment on full/partial completion
+  - Cancellation rules
+- Main functions:
+  - `startContract()`
+  - `submitWork()`
+  - `evaluateWork()`
+  - `releasePayment()`
+  - `cancelContractByClient()`
+  - `cancelContractByFreelancer()`
 
-## 💼 Use Cases
+### AI Evaluators
 
-- **Freelance Platforms**: Auto-approve quality work
-- **NFT Projects**: Resolve royalty disputes
-- **DAOs**: Judge governance proposals
-- **DeFi**: Settle insurance claims
+#### 📁 Vertex AI (Google Cloud)
+- Validates software projects by analyzing GitHub repositories
+- Checks:
+  - Commit history
+  - Task completion
+  - Issue tracking
+  - Testing and documentation
+- Returns `completionPercentage` and `evaluationVerdict`
 
-## 📈 Why It Matters
+#### 🎥 ML Model (Media)
+- Validates deliverables in:
+  - Video
+  - Audio
+  - Images
+- Checks:
+  - Requirement match
+  - Format and quality
+  - Visual/audio consistency
+- Outputs `completionPercentage` and `pass/fail` verdict
 
-| Before Web3SSH | With Web3SSH |
-|----------------|--------------|
-| Slow manual reviews | Instant AI decisions |
-| Centralized arbitrators | Decentralized fairness |
-| All-or-nothing payouts | Partial settlements possible |
-| Subjective arguments | Objective quality metrics |
+---
 
-## 🏗️ Getting Started
+## 🔄 Workflow
 
-Coming soon! We're currently in development with plans to launch:
-- Testnet: Q4 2024
-- Mainnet: Q1 2025
+### Step-by-step:
 
-## 🤝 Contribute
+1. **Contract Initialization**
+   - Client sets budget, scope, milestones, and cancellation rules
+   - Full funds are deposited into smart contract
 
-We welcome developers, AI researchers, and Web3 enthusiasts to join our community. Check our GitHub for upcoming opportunities to get involved.
+2. **Freelancer Submission**
+   - Code submitted via GitHub (software)
+   - Media uploaded (audio, image, video)
+   - Proof of work submitted via frontend
+
+3. **AI/ML Evaluation**
+   - Backend calls Vertex AI or ML model
+   - Calculates `completionPercentage` and `evaluationVerdict`
+   - Sends results to smart contract via off-chain oracle/backend
+
+4. **Smart Contract Decision**
+   - If work is complete → full payment
+   - If cancelled midway:
+     - **Client cancels** → pays 12–25% fee + partial payment based on work done
+     - **Freelancer cancels** → forfeits all payment
+
+---
+
+## 📊 Example Scenarios
+
+| Case                          | Completion % | Result                                                      |
+|-------------------------------|--------------|-------------------------------------------------------------|
+| Client cancels at 60%         | 60%          | Freelancer gets 60% of payment + 12–25% cancellation fee     |
+| Freelancer cancels            | N/A          | Client refunded in full                                     |
+| Full completion               | 100%         | Freelancer gets full payment                                |
+
+---
+
+## 🔐 Security & Integration
+
+- Off-chain backend or Chainlink Functions used to fetch AI evaluation securely
+- Signed data or on-chain verification prevents manipulation
+- Possible IPFS integration for immutable result storage
+
+---
+
+## 🧩 Future Enhancements
+
+- DAO-based dispute resolution for subjective cases
+- Milestone-based progressive payments
+- Support for more freelancing domains
+
+---
+
+## 🧠 Technologies Used
+
+- `Solidity`, `Hardhat` – Smart contracts
+- `React`, `MetaMask` – Frontend interface
+- `Vertex AI (GCP)` – Software project validation
+- `Custom ML (TensorFlow/PyTorch)` – Media asset evaluation
+- `Chainlink Functions / Oracle` – Off-chain to on-chain bridge
+
+---
+
+## 📬 Contact
+
+If you're interested in collaborating or contributing, feel free to open an issue or reach out!
+
