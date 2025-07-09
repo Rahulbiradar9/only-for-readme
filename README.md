@@ -155,10 +155,3 @@ To ensure **data immutability and trust**, every critical event (entry, movement
 7. Optional: Integrate blockchain logs
 
 ---
-
-Would you like:
-
-* A visual **flow diagram** image?
-* A **Firebase project template**?
-* Sample Gemini agent code (in Python or prompt format)?
-  Let me know and I’ll build the next step with you!
